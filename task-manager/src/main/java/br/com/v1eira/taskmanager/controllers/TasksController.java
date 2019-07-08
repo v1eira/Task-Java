@@ -90,5 +90,19 @@ public class TasksController {
 		}
 		return mv;
 	}
+	
+	@GetMapping("/delete/{id}")
+	public String delete(@PathVariable("id") Long id) {
+		repoTask.deleteById(id);
+		return "redirect:/tasks/list";
+	}
+	
+	@GetMapping("/finish/{id}")
+	public String finish(@PathVariable("id") Long id) {
+		Task task = repoTask.getOne(id);
+		task.setFinished(true);
+		repoTask.save(task);
+		return "redirect:/tasks/list";
+	}
 
 }

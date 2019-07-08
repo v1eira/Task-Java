@@ -16,10 +16,14 @@
 				<div class="card-body">
 					<p class="card-text" th:text="${task.description}"></p>
 					<p class="card-text" th:text="${'Expiration Date: ' + #dates.format(task.expirationDate, 'dd/MM/yyyy') }"></p>
+					<p class="card-text" style="color: green;" th:if="${task.expirationDate.after(new java.util.Date())}">Up to date</p>
+					<p class="card-text" style="color: red;" th:if="${task.expirationDate.before(new java.util.Date())}">Late</p>
 				</div>
 				<div class="card-footer bg-light">
 					<p>
-						<a th:href="@{/tasks/update/{id}(id=${task.id})}">Update</a>
+						<a th:href="@{/tasks/update/{id}(id=${task.id})}">Update</a> |
+						<a th:href="@{/tasks/delete/{id}(id=${task.id})}">Delete</a> |
+						<a th:if="${!task.finished}" th:href="@{/tasks/finish/{id}(id=${task.id})}">Finish</a>
 					</p>
 				</div>
 			</div>
