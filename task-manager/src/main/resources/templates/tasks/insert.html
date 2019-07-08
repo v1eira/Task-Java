@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Task Manager - Create new task</title>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="fragments/fragments :: header"></div>
+	<div class="container">
+		<h3>Insert new task</h3>
+		<form class="form-horizontal" action="/tasks/insert" method="post"
+			th:object="${task}">
+			<div class="row">
+				<div class="form-group col-md-6">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('title')}">
+						<label th:errors="*{title}" class="validation-message"></label>
+					</div>
+					<label>Title:</label>
+					<input type="text" class="form-control" th:field="*{title}">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-6">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('description')}">
+						<label th:errors="*{description}" class="validation-message"></label>
+					</div>
+					<label>Description:</label>
+					<input type="text" class="form-control" th:field="*{description}">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-6">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('expirationDate')}">
+						<label th:errors="*{expirationDate}" class="validation-message"></label>
+					</div>
+					<label>Expiration Date:</label>
+					<input type="date" class="form-control" th:field="*{expirationDate}">
+				</div>
+			</div>
+			<button type="submit" class="btn btn-outline-primary">Save</button>
+		</form>
+	</div>
+
+	<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
