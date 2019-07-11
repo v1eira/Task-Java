@@ -23,3 +23,6 @@ A simple task manager app.
 - <b>WebJars</b>
 - <b>Bootstrap</b>
 - <b>jQuery</b>
+
+## Heroku
+Click [here](https://polar-cliffs-94002.herokuapp.com/login) to access the app on Heroku.
