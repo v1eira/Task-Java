@@ -1,0 +1,11 @@
+/home/ewerson/Área de Trabalho/repos/Task-Java/src/main/java/br/com/v1eira/taskmanager/controllers/AccountController.java
+/home/ewerson/Área de Trabalho/repos/Task-Java/src/main/java/br/com/v1eira/taskmanager/SecurityConfig.java
+/home/ewerson/Área de Trabalho/repos/Task-Java/src/main/java/br/com/v1eira/taskmanager/repos/RepoTask.java
+/home/ewerson/Área de Trabalho/repos/Task-Java/src/main/java/br/com/v1eira/taskmanager/repos/RepoUser.java
+/home/ewerson/Área de Trabalho/repos/Task-Java/src/main/java/br/com/v1eira/taskmanager/TaskManagerApplication.java
+/home/ewerson/Área de Trabalho/repos/Task-Java/src/main/java/br/com/v1eira/taskmanager/models/Task.java
+/home/ewerson/Área de Trabalho/repos/Task-Java/src/main/java/br/com/v1eira/taskmanager/controllers/HomeController.java
+/home/ewerson/Área de Trabalho/repos/Task-Java/src/main/java/br/com/v1eira/taskmanager/WebMvcConfig.java
+/home/ewerson/Área de Trabalho/repos/Task-Java/src/main/java/br/com/v1eira/taskmanager/models/User.java
+/home/ewerson/Área de Trabalho/repos/Task-Java/src/main/java/br/com/v1eira/taskmanager/controllers/TasksController.java
+/home/ewerson/Área de Trabalho/repos/Task-Java/src/main/java/br/com/v1eira/taskmanager/services/UserService.java

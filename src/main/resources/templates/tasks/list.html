@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Task Manager - List</title>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="fragments/fragments :: header"></div>
+	<div class="container">
+		<h3>List of tasks</h3>
+		<a href="/tasks/insert" class="btn btn-outline-success">Create new task</a>
+		<div th:each="task: ${tasks}" style="margin: 10px">
+			<div class="card bg-light mb-3">
+				<div class="card-header" th:text="${task.title}"></div>
+				<div class="card-body">
+					<p class="card-text" th:text="${task.description}"></p>
+					<p class="card-text" th:text="${'Expiration Date: ' + #dates.format(task.expirationDate, 'dd/MM/yyyy') }"></p>
+					<p class="card-text" style="color: green;" th:if="${task.expirationDate.after(new java.util.Date())}">Up to date</p>
+					<p class="card-text" style="color: red;" th:if="${task.expirationDate.before(new java.util.Date())}">Late</p>
+				</div>
+				<div class="card-footer bg-light">
+					<p>
+						<a th:href="@{/tasks/update/{id}(id=${task.id})}">Update</a> |
+						<a th:href="@{/tasks/delete/{id}(id=${task.id})}">Delete</a> |
+						<a th:if="${!task.finished}" th:href="@{/tasks/finish/{id}(id=${task.id})}">Finish</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Task Manager - Login</title>
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<!-- ** Header -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Task manager</a>
+	</nav>
+
+	<div class="container">
+		<h3>Login</h3>
+		<form action="/login" method="post" class="form-signin">
+			<div class="form-group">
+				<div class="col-md-9">
+					<input type="text" class="form-control" placeholder="Email"
+						name="email">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-9">
+					<input type="password" class="form-control" placeholder="Password"
+						name="password">
+				</div>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-outline-primary">Login</button>
+			</div>
+			<div class="form-group">
+				<div class="col-md-9">
+					<div class="alert alert-danger" role="alert" th:if="${param.error}">
+						Could not log in
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<span>Not registered yet? <a href="/registration">Sign up</a></span>
+			</div>
+		</form>
+	</div>
+
+	<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
